@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Đặt font chữ cho body */
+    color: white; /* Màu chữ mặc định là trắng */
+    overflow: hidden; /* Ẩn thanh cuộn */
+}
+
+.hero {
+    background: linear-gradient(45deg, #ff0080, #ff8c00, #ff0080, #ff8c00);
+    background-size: 400% 400%; /* Kích thước nền lớn để hiệu ứng chạy */
+    animation: gradientAnimation 10s ease infinite; /* Hiệu ứng chuyển động */
+    height: 100vh; /* Chiều cao toàn bộ viewport */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px; /* Padding để tránh chữ chạm vào viền */
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+h1 {
+    font-family: 'Dancing Script', cursive; /* Đặt font chữ cho tiêu đề */
+    font-size: 3rem; /* Kích thước chữ */
+    margin-bottom: 10px;
+    color: #ff69b4; /* Màu hồng cho tiêu đề */
+    text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.7); /* Đổ bóng chữ */
+    padding: 10px 20px; /* Thêm đệm cho tiêu đề */
+    background-color: rgba(0, 0, 0, 0.5); /* Nền mờ cho tiêu đề */
+    border-radius: 10px; /* Bo tròn các góc của nền */
+}
+
+p {
+    font-size: 1.2rem; /* Kích thước chữ */
+    margin-bottom: 20px;
+    color: #ff69b4; /* Màu hồng cho văn bản */
+    text-shadow: 1px 1px 2px rgba(255, 105, 180, 0.5);
+    padding: 10px 20px; /* Thêm đệm cho văn bản */
+    background-color: rgba(0, 0, 0, 0.5); /* Nền mờ cho văn bản */
+    border-radius: 10px; /* Bo tròn các góc của nền */
+}
+
+/* Nút khám phá */
+.explore-button {
+    background-color: #ff4081; /* Nền nút */
+    color: white; /* Màu chữ nút */
+    padding: 10px 20px; /* Padding cho nút */
+    border: none; /* Không có viền */
+    border-radius: 5px; /* Bo tròn các góc */
+    font-size: 1.2rem; /* Kích thước chữ nút */
+    cursor: pointer; /* Thay đổi con trỏ khi hover */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Hiệu ứng chuyển đổi màu nền và phóng to */
+}
+
+.explore-button:hover {
+    background-color: #e91e63; /* Màu nền nút khi hover */
+    transform: scale(1.1); /* Phóng to nút khi hover */
+}
+
+/* Ảnh đại diện */
+.avatar {
+    width: 200px; /* Kích thước chiều rộng ảnh đại diện */
+    height: auto; /* Để chiều cao tự động */
+    border-radius: 50%; /* Bo tròn ảnh */
+    margin-bottom: 10px; /* Khoảng cách giữa ảnh và chữ */
+    border: 3px solid #ff69b4; /* Đường viền cho ảnh đại diện */
+    transition: transform 0.3s ease; /* Hiệu ứng chuyển đổi cho ảnh đại diện */
+}
+
+.avatar:hover {
+    transform: scale(1.1); /* Phóng to ảnh đại diện khi hover */
+}
+
+/* Hộp thoại thông báo tùy chỉnh */
+.custom-alert {
+    display: none; /* Ẩn hộp thoại thông báo mặc định */
+    position: fixed; /* Đặt vị trí cố định */
+    z-index: 1; /* Đảm bảo hộp thoại hiển thị trên các phần khác */
+    left: 0;
+    top: 0;
+    width: 100%; /* Chiếm toàn bộ chiều rộng */
+    height: 100%; /* Chiếm toàn bộ chiều cao */
+    overflow: auto; /* Cho phép cuộn nếu cần */
+    background-color: rgba(0, 0, 0, 0.7); /* Nền mờ */
+}
+
+.alert-content {
+    background-color: #fff; /* Nền hộp thoại */
+    margin: 15% auto; /* Căn giữa hộp thoại */
+    padding: 20px; /* Padding cho hộp thoại */
+    border: 1px solid #888; /* Đường viền hộp thoại */
+    width: 80%; /* Chiều rộng hộp thoại */
+    max-width: 500px; /* Chiều rộng tối đa */
+    border-radius: 10px; /* Bo tròn các góc */
+    text-align: center; /* Căn giữa văn bản */
+}
+
+.close {
+    color: #aaa; /* Màu chữ cho nút đóng */
+    float: right; /* Nút đóng nằm bên phải */
+    font-size: 28px; /* Kích thước chữ cho nút đóng */
+    font-weight: bold; /* Đậm chữ */
+}
+
+.close:hover,
+.close:focus {
+    color: red; /* Màu chữ cho nút đóng khi hover */
+    text-decoration: none; /* Không có gạch chân */
+    cursor: pointer; /* Hiện con trỏ tay khi hover */
+}
+
+/* Chỉ áp dụng hiệu ứng cho trình duyệt máy tính */
+@media (hover: hover) {
+    .avatar:hover {
+        transform: scale(1.1); /* Phóng to ảnh đại diện khi hover */
+    }
+
+    .explore-button:hover {
+        background-color: #e91e63; /* Màu nền nút khi hover */
+        transform: scale(1.1); /* Phóng to nút khi hover */
+    }
+}
+
+.checkmark {
+    color: #00ff00; /* Màu xanh cho dấu tích */
+    font-size: 1.5rem; /* Kích thước chữ cho dấu tích */
+    margin-left: 5px; /* Khoảng cách giữa tên và dấu tích */
+}
